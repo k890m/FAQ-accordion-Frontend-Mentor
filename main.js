@@ -1,7 +1,13 @@
-const questionHeader = document.querySelectorAll(".question");
+const questionHeaders = document.querySelectorAll(".question");
 
-questionHeader.forEach(questionHeader => {
+[...questionHeaders].forEach(questionHeader => {
     questionHeader.addEventListener('click', event => {
-        questionHeader.classList.toggle(".active");
+        questionHeader.classList.toggle("active");
+        const accordianItemBody = questionHeader.nextElementSibling;
+        if(questionHeader.classList.contains("active")){
+            accordianItemBody.style.maxHeight = accordianItemBody.scrollHeight + "px";
+        } else {
+            accordianItemBody.style.maxHeight = 0
+        }
     });
 });

@@ -1,6 +1,14 @@
 body {
   background-color: hsl(275, 100%, 97%);
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(assets/images/background-pattern-desktop.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .attribution {
@@ -21,19 +29,23 @@ footer {
 .card {
   background-color: white;
   border-radius: 10px;
-  width: fit-content;
+  width: 720px;
+  padding: 10px;
 }
 
-.title-container{
-  font-family: 'Work Sans', sans-serif;
+.title-container {
+  font-family: "Work Sans", sans-serif;
   font-weight: 700;
-  align-items: center;
-  font-size: 2rem;
+  padding-left: 30px;
+  padding-bottom: 0;
+  font-size: 3rem;
+  line-height: normal;
 }
 
-.background-img {
-  width: 100%;
-  padding: 100;
+.title-container img,
+.title-container p {
+  display: inline-block;
+  height: fit-content;
 }
 
 .accordion {
@@ -45,7 +57,7 @@ footer {
 .question {
   color: hsl(292, 42%, 14%);
   font-weight: 600;
-  padding: 0.5rem 3rem 0.5rem 1 rem;
+  padding: 0.5rem 3rem 0.5rem .5 rem;
   min-height: 3.5rem;
   line-height: 1.25rem;
   display: flex;
@@ -62,10 +74,18 @@ footer {
 
 .question.active::after {
   content: url(assets/images/icon-minus.svg);
-  
 }
 
 .answer {
-  color:hsl(292, 16%, 49%);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
+.accordion-item-content {
+  color: hsl(292, 16%, 49%);
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-color: hsl(275, 100%, 97%);
+}
